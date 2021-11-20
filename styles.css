@@ -19,7 +19,6 @@ body {
     min-height: 100vh;
     color: var(--standard-grey);
     background: linear-gradient(60deg, rgb(42, 173, 216), rgb(0, 26, 255));
-    background-repeat: no-repeat;
     line-height: 1.5;
 }
 
