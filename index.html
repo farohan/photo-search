@@ -13,15 +13,15 @@
     <h1 id="docu-title">PhotoSearch</h1>
     <form class="entire-form" id="search-form">
         <div class="search-bar">
-            <input id="search-field" type="text" required>
-            <button id="search-btn" type="submit" onclick="myFunction()">Search</button>
+            <input id="search-field" type="text" maxlength="75" required>
+            <button id="search-btn" type="submit" onclick="search()">Search</button>
         </div>
         <div class="limit-div">
             <label id="limit-label" for="limit">How many images do you want to load?</label>
-            <input id="limit" name="limit" type="number" required>
+            <input id="limit" name="limit" type="number" min="1" max="75" required>
         </div>
     </form>
-    <section class="gallery">
+    <section class="gallery" id="img-gallery">
     </section>
 
     <script src="app.js"></script>
