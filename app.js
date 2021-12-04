@@ -14,7 +14,7 @@ function search() {
     for (let i = 1; i <= limitNum.value; i++) {
         console.log(i);
         let galleryImg = document.createElement('img');
-        galleryImg.src = `https://source.unsplash.com/random/?sig=${i}/&${content}`;
+        galleryImg.src = `https://source.unsplash.com/random/?${content}/sig=${i}`;
         galleryImg.alt = content;
         galleryImg.className = 'gallery-img';
 
