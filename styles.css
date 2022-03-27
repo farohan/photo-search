@@ -26,12 +26,26 @@
     border-radius: 5px;
 }
 
-.download {
+.open-image-btn {
     width: 20vw;
     border: none;
     border-radius: 5px;
     padding: 5px;
     color: white;
     background: rgb(0, 129, 250);
+    z-index: 1000;
     cursor: pointer;
+}
+
+@media only screen and (max-width: 800px) {
+    .gallery {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .gallery-item,
+    .gallery-img {
+        height: 90vh;
+        width: 90vw;
+    }
 }
