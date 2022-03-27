@@ -30,8 +30,9 @@ function fetchPhotos() {
                 //Creating the elements
                 let galleryItem = document.createElement('div');
                 let img = document.createElement('img');
-                let description = document.createElement('p');
-                let dwnload = document.createElement('button');
+                let desc = document.createElement('p');
+                let hyperLink = document.createElement('a');
+                let openImage = document.createElement('button');
 
                 //Specifying them
                 galleryItem.classList.add('gallery-item');
@@ -40,19 +41,24 @@ function fetchPhotos() {
                 img.alt = image.alt_description;
                 img.classList.add('gallery-img');
 
-                description.innerHTML = image.alt_description;
-                description.style.textAlign = 'center';
+                let description = image.alt_description;
+                let capitalizedDescription = description.charAt(0).toUpperCase() + description.slice(1);
+                desc.innerHTML = `${capitalizedDescription}.`;
+                desc.style.textAlign = 'center';
 
-                //Downloading doesn't work yet
-                dwnload.innerHTML = 'Download Image';
-                dwnload.classList.add('download');
-                dwnload.onclick = image.links.download;
+                //Download Link Setup
+                hyperLink.href = image.links.html;
+
+                //Download Button
+                openImage.innerHTML = 'Open Image in Unsplash';
+                openImage.classList.add('open-image-btn');
 
                 //Appending everything to the gallery
                 gallery.appendChild(galleryItem);
                 galleryItem.appendChild(img);
-                galleryItem.appendChild(description);
-                galleryItem.appendChild(dwnload);
+                galleryItem.appendChild(desc);
+                galleryItem.appendChild(hyperLink);
+                hyperLink.appendChild(openImage);
             });
         })
 }
